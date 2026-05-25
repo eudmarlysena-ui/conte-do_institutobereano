@@ -181,6 +181,107 @@ for modulo in modulos:
         for item in modulo["conteudo"]:
             st.markdown(f"- {item}")
 
+            st.markdown("## Plano completo de formação — 24 semanas")
+
+plano = {
+    "MÊS 1 — Fundamentos": [
+        "Aula 1: Introdução ao curso + o que é pregação expositiva",
+        "Aula 2: O que é hermenêutica",
+        "Aula 3: Inspiração e autoridade bíblica",
+        "Aula 4: Contexto histórico e literário",
+    ],
+
+    "MÊS 2 — Hermenêutica aplicada": [
+        "Aula 5: Gêneros bíblicos (narrativa)",
+        "Aula 6: Poesia e sabedoria",
+        "Aula 7: Profecia e apocalíptico",
+        "Aula 8: Epístolas e evangelhos",
+    ],
+
+    "MÊS 3 — Exegese": [
+        "Aula 9: Observação do texto",
+        "Aula 10: Interpretação correta",
+        "Aula 11: Estudo de palavras",
+        "Aula 12: Contexto cultural e histórico",
+    ],
+
+    "MÊS 4 — Organização do texto": [
+        "Aula 13: Ideia central do texto",
+        "Aula 14: Estrutura do texto bíblico",
+        "Aula 15: Teologia do texto",
+        "Aula 16: Aplicação bíblica",
+    ],
+
+    "MÊS 5 — Pregação expositiva": [
+        "Aula 17: O que é sermão expositivo",
+        "Aula 18: Tipos de sermão",
+        "Aula 19: Estrutura do sermão",
+        "Aula 20: Construção dos pontos",
+    ],
+
+    "MÊS 6 — Prática ministerial": [
+        "Aula 21: Introdução e conclusão",
+        "Aula 22: Ilustrações e aplicação",
+        "Aula 23: Comunicação e oratória",
+        "Aula 24: Apresentação dos sermões",
+    ],
+}
+
+col1, col2 = st.columns(2)
+
+items = list(plano.items())
+
+for i, (titulo, aulas) in enumerate(items):
+    destino = col1 if i % 2 == 0 else col2
+
+    with destino:
+        with st.container():
+            st.markdown(f"""
+            <div class="card">
+                <h3>{titulo}</h3>
+            """, unsafe_allow_html=True)
+
+            for aula in aulas:
+                st.markdown(f"- {aula}")
+
+            st.markdown("</div>", unsafe_allow_html=True)
+
+            st.markdown("## O que o aluno desenvolverá")
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.markdown("""
+    <div class="card">
+        <h3>Interpretar</h3>
+        <p class="text">Com excelência e responsabilidade bíblica.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+    <div class="card">
+        <h3>Pregar</h3>
+        <p class="text">Com fidelidade ao texto e relevância pastoral.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col3:
+    st.markdown("""
+    <div class="card">
+        <h3>Exaltar Cristo</h3>
+        <p class="text">Com leitura cristocêntrica equilibrada.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col4:
+    st.markdown("""
+    <div class="card">
+        <h3>Edificar a Igreja</h3>
+        <p class="text">Com ensino sólido, bíblico e aplicável.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
 st.markdown("## Metodologia")
 
 st.markdown("""
@@ -246,3 +347,5 @@ st.markdown("""
     “Examinando cada dia nas Escrituras...” — Atos 17.11
 </div>
 """, unsafe_allow_html=True)
+
+
