@@ -107,7 +107,7 @@ with col1:
 with col2:
     st.markdown('<div class="card"><h3>Total</h3><p class="text">24 aulas semanais.</p></div>', unsafe_allow_html=True)
 with col3:
-    st.markdown('<div class="card"><h3>Carga</h3><p class="text">1 aula por semana, de 2h a 2h30.</p></div>', unsafe_allow_html=True)
+    st.markdown('<div class="card"><h3>Carga</h3><p class="text">1 aula por semana, de 14h a 17h00.</p></div>', unsafe_allow_html=True)
 with col4:
     st.markdown('<div class="card"><h3>Formato</h3><p class="text">Teórico-prático, com produção de sermões.</p></div>', unsafe_allow_html=True)
 
