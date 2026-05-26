@@ -7,6 +7,7 @@ st.set_page_config(
 )
 
 INTERESSE_URL = "https://institutobereano.streamlit.app/"
+WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/F4OsPElqXI2FAvGdj5xpyg"
 
 st.markdown("""
 <style>
@@ -80,6 +81,43 @@ a.button {
     text-align: center;
     color: #aebbd0;
     padding: 2rem 0;
+}
+.whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 12px 35px rgba(0,0,0,.45);
+    z-index: 99999;
+    text-decoration: none;
+    transition: all .25s ease;
+    border: 3px solid rgba(255,255,255,.25);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 18px 45px rgba(0,0,0,.55);
+}
+
+.whatsapp-tooltip {
+    position: fixed;
+    bottom: 116px;
+    right: 24px;
+    background: rgba(7, 24, 47, .96);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid rgba(227,199,111,.35);
+    z-index: 99999;
+    box-shadow: 0 10px 25px rgba(0,0,0,.35);
 }
 </style>
 """, unsafe_allow_html=True)
@@ -347,5 +385,14 @@ st.markdown("""
     “Examinando cada dia nas Escrituras...” — Atos 17.11
 </div>
 """, unsafe_allow_html=True)
+st.markdown(f"""
+<div class="whatsapp-tooltip">
+    Entre em nosso grupo oficial
+</div>
 
-
+<a href="{WHATSAPP_GROUP_URL}" target="_blank" class="whatsapp-float">
+    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="white" viewBox="0 0 24 24">
+        <path d="M20.52 3.48A11.83 11.83 0 0 0 12.05 0C5.55 0 .25 5.29.25 11.79c0 2.08.54 4.11 1.58 5.9L0 24l6.5-1.7a11.77 11.77 0 0 0 5.55 1.42h.01c6.49 0 11.79-5.29 11.79-11.79 0-3.15-1.23-6.1-3.33-8.45zM12.06 21.5a9.67 9.67 0 0 1-4.93-1.35l-.35-.21-3.86 1.01 1.03-3.76-.23-.39a9.64 9.64 0 0 1-1.49-5.01c0-5.34 4.35-9.69 9.7-9.69 2.58 0 5 .99 6.83 2.82a9.6 9.6 0 0 1 2.84 6.86c0 5.35-4.35 9.72-9.69 9.72zm5.31-7.28c-.29-.15-1.72-.85-1.98-.95-.27-.1-.46-.15-.65.15-.2.29-.75.95-.92 1.15-.17.2-.34.22-.63.08-.29-.15-1.24-.46-2.36-1.48-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.89-2.15-.24-.58-.49-.5-.65-.5h-.56c-.2 0-.52.08-.79.37-.27.29-1.04 1.02-1.04 2.49s1.06 2.89 1.21 3.09c.15.2 2.08 3.18 5.04 4.46.71.31 1.27.5 1.71.64.72.23 1.37.2 1.89.12.58-.09 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.56-.35z"/>
+    </svg>
+</a>
+""", unsafe_allow_html=True)
